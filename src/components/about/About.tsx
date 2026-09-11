@@ -20,13 +20,15 @@ export default function About() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardRef.current,
-        { opacity: 0, x: -60, rotateY: 12 },
+        { opacity: 0, x: -120, rotateY: -78, transformPerspective: 1200 },
         {
           opacity: 1,
           x: 0,
           rotateY: 0,
-          duration: 1,
-          ease: "power3.out",
+          transformPerspective: 1200,
+          transformOrigin: "left center",
+          duration: 1.3,
+          ease: "power4.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 70%",
@@ -58,7 +60,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-void-raised py-28 md:py-36"
+      className="section-shear relative -mt-[4vw] w-full overflow-hidden bg-void-raised py-28 md:py-36"
     >
       <div className="absolute inset-0 opacity-40">
         <div className="scanline-overlay" />

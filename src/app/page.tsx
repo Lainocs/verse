@@ -4,6 +4,9 @@ import { useState } from "react";
 import BootSequence from "@/components/intro/BootSequence";
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
+import Projects from "@/components/projects/Projects";
+import Skills from "@/components/skills/Skills";
+import Contact from "@/components/contact/Contact";
 
 export default function Home() {
   const [booted, setBooted] = useState(false);
@@ -11,9 +14,12 @@ export default function Home() {
   return (
     <>
       {!booted && <BootSequence onDone={() => setBooted(true)} />}
-      <main className="flex flex-1 flex-col bg-void">
+      <main className="bg-void">
         <Hero />
         <About />
+        <Projects />
+        <Skills />
+        <Contact />
       </main>
     </>
   );

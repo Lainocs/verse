@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Rajdhani } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/cursor/CustomCursor";
+import HudFrame from "@/components/hud/HudFrame";
 
 const bebas = Bebas_Neue({
   variable: "--font-bebas",
@@ -24,8 +25,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${bebas.variable} ${rajdhani.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-void text-bone antialiased">
+      <body className="min-h-full bg-void text-bone antialiased">
         <CustomCursor />
+        <HudFrame />
         {children}
       </body>
     </html>

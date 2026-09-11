@@ -39,7 +39,6 @@
 
 html {
   background: var(--color-void);
-  scroll-behavior: smooth;
 }
 
 body {
@@ -179,4 +178,31 @@ body {
 
 .blink-caret {
   animation: blink-caret 1s steps(1) infinite;
+}
+
+/* ---- Structural / scroll ---- */
+
+.section-shear {
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee linear infinite;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+.marquee-pause-hover:hover .marquee-track {
+  animation-play-state: paused;
 }
