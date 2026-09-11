@@ -60,7 +60,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-void-raised py-28 md:py-36"
+      className="relative w-full overflow-hidden bg-void-raised/60 py-28 backdrop-blur-md md:py-36"
     >
       <div className="absolute inset-0 opacity-40">
         <div className="scanline-overlay" />
@@ -105,18 +105,17 @@ export default function About() {
             FREELANCE
           </h2>
           <p className="about-line mt-6 max-w-lg text-base leading-relaxed text-bone/75 md:text-lg">
-            Software Engineer freelance, après un an et demi chez Escape
-            (YC W23) à concevoir des interfaces de détection de
-            vulnérabilités API et l&apos;architecture backend qui les fait
-            tourner — entre Svelte, Node.js et GraphQL. Ancien prof à
-            l&apos;IIM Digital School et fondateur d&apos;une asso dev étudiante, je
-            garde toujours un pied dans des side-projects qui sortent du
-            cadre : bot Discord, tracker de jeu de cartes, sites 3D.
+            Software Engineer freelance basé à Paris, entre frontend
+            (Svelte, Vue, React) et backend (Node.js, GraphQL, PHP) —
+            avec un passif cybersécurité, enseignement et associatif
+            détaillé plus bas. En dehors des mandats, je garde un pied
+            dans des side-projects qui sortent du cadre : bot Discord,
+            tracker de jeu de cartes, sites 3D.
           </p>
 
           <div className="about-line mt-10 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:grid-cols-4">
             {STATS.map((stat) => (
-              <div key={stat.label} className="bg-void-raised px-4 py-4">
+              <div key={stat.label} className="bg-void/50 px-4 py-4 backdrop-blur-sm">
                 <p className="hud-label text-mute">{stat.label}</p>
                 <p className="mt-1 font-tactical text-sm font-semibold tracking-wide text-bone">
                   {stat.value}

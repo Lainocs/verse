@@ -1,11 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
-
-const HeroCanvas = dynamic(() => import("./HeroCanvas"), { ssr: false });
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -77,16 +74,12 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-void"
+      className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden"
     >
       <div
         ref={sceneRef}
         className="absolute inset-0 flex flex-col justify-end will-change-transform"
       >
-        <div className="absolute inset-0">
-          <HeroCanvas />
-        </div>
-
         <div
           ref={characterRef}
           className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46vw] max-w-[620px] md:block"

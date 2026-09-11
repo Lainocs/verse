@@ -3,6 +3,8 @@ import { Bebas_Neue, Rajdhani } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/cursor/CustomCursor";
 import HudFrame from "@/components/hud/HudFrame";
+import ScrollProgressTracker from "@/components/world/ScrollProgressTracker";
+import WorldCanvasLoader from "@/components/world/WorldCanvasLoader";
 
 const bebas = Bebas_Neue({
   variable: "--font-bebas",
@@ -26,9 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className={`${bebas.variable} ${rajdhani.variable} h-full`}>
       <body className="min-h-full bg-void text-bone antialiased">
+        <WorldCanvasLoader />
+        <ScrollProgressTracker />
         <CustomCursor />
         <HudFrame />
-        {children}
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );

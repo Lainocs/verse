@@ -137,7 +137,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-void-raised py-28 md:py-36"
+      className="relative w-full overflow-hidden bg-void-raised/60 py-28 backdrop-blur-md md:py-36"
     >
       <div
         ref={scanRef}

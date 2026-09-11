@@ -123,7 +123,7 @@ export default function Projects() {
     <section
       id="projets"
       ref={sectionRef}
-      className="relative w-full bg-void"
+      className="relative w-full bg-void/55 backdrop-blur-md"
     >
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 scanline-overlay opacity-40" />
