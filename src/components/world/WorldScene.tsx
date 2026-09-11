@@ -11,7 +11,9 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 import { scrollState } from "@/lib/scrollProgress";
-import { sampleCameraPath } from "@/lib/waypoints";
+import { sampleCameraPath, getZone } from "@/lib/waypoints";
+import ImagePanel from "./ImagePanel";
+import SceneText from "./SceneText";
 
 const RED = "#ff4655";
 const BONE = "#ece8e1";
@@ -238,10 +240,99 @@ export default function WorldScene() {
       <CentralBlob />
       <SatelliteCluster position={[-0.6, 0.3, -1]} scale={0.9} />
       <SatelliteCluster position={[0.4, -0.1, -6.2]} scale={0.7} />
-      <ProjectRing position={[0.3, -0.2, -6.2]} />
+      <ProjectRing position={[0.3, -0.2, -7.9]} />
       <FlightGrid />
       <ParticleField />
       <DepthFog />
+
+      <ImagePanel
+        src="/images/agent-fullbody-art.webp"
+        position={[2.2, -0.3, 0.6]}
+        width={1.9}
+        zone={getZone("hero")}
+      />
+      <ImagePanel
+        src="/images/agent-portrait-art.webp"
+        position={[-0.6, 0.3, -0.85]}
+        width={1.9}
+        zone={getZone("about")}
+      />
+
+      {/* Experience — solid bone type, log-entry scale, no outline */}
+      <SceneText
+        position={[-0.7, 0.35, -1.3]}
+        zone={getZone("parcours-1")}
+        color={BONE}
+        fontSize={0.42}
+        maxWidth={3}
+      >
+        ESCAPE
+      </SceneText>
+      <SceneText
+        position={[0.7, 0.5, -2.2]}
+        zone={getZone("parcours-2")}
+        color={BONE}
+        fontSize={0.42}
+        maxWidth={3}
+        anchorX="center"
+      >
+        IIM DIGITAL SCHOOL
+      </SceneText>
+      <SceneText
+        position={[-0.6, 0.15, -3.1]}
+        zone={getZone("parcours-3")}
+        color={BONE}
+        fontSize={0.42}
+        maxWidth={3}
+      >
+        LA 404 DEVINCI
+      </SceneText>
+
+      {/* Projects — big red outlined poster type */}
+      <SceneText
+        position={[-0.9, 0.3, -6.2]}
+        zone={getZone("project-1")}
+        color={RED}
+        outlineColor="#08090b"
+        outlineWidth={0.025}
+        fontSize={0.62}
+        maxWidth={3.4}
+      >
+        RIFTBOUND
+      </SceneText>
+      <SceneText
+        position={[0.9, -0.2, -7.3]}
+        zone={getZone("project-2")}
+        color={RED}
+        outlineColor="#08090b"
+        outlineWidth={0.025}
+        fontSize={0.62}
+        maxWidth={3.4}
+      >
+        VIDÉOCLUB
+      </SceneText>
+      <SceneText
+        position={[-0.5, 0.2, -8.4]}
+        zone={getZone("project-3")}
+        color={RED}
+        outlineColor="#08090b"
+        outlineWidth={0.025}
+        fontSize={0.42}
+        maxWidth={2.6}
+      >
+        LETTERBOXD BOT
+      </SceneText>
+      <SceneText
+        position={[0.9, -0.3, -9.6]}
+        zone={getZone("project-4")}
+        color={RED}
+        outlineColor="#08090b"
+        outlineWidth={0.025}
+        fontSize={0.5}
+        maxWidth={3}
+      >
+        SPOTIFY STATS
+      </SceneText>
     </>
   );
 }

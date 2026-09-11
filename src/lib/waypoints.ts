@@ -69,3 +69,9 @@ export function zoneVisibility(progress: number, zone: ContentZone) {
   const x = 1 - THREE.MathUtils.clamp(d / zone.halfWidth, 0, 1);
   return x * x * (3 - 2 * x);
 }
+
+export function getZone(id: string): ContentZone {
+  const zone = CONTENT_ZONES.find((z) => z.id === id);
+  if (!zone) throw new Error(`Unknown content zone: ${id}`);
+  return zone;
+}

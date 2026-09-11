@@ -1,6 +1,16 @@
 "use client";
 
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import {
+  SiReact,
+  SiTypescript,
+  SiThreedotjs,
+  SiNextdotjs,
+  SiDiscord,
+  SiNodedotjs,
+  SiSpotify,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
 import { useZoneVisibility } from "./useZoneVisibility";
 
 const EMAIL = "ndegarrigues@gmail.com";
@@ -22,6 +32,16 @@ const STACK = [
   "Terraform",
   "Three.js",
 ];
+
+function TechIcons({ icons }: { icons: IconType[] }) {
+  return (
+    <div className="mt-3 flex items-center justify-end gap-3">
+      {icons.map((Icon, i) => (
+        <Icon key={i} className="h-4 w-4 text-mute" />
+      ))}
+    </div>
+  );
+}
 
 export default function ContentLayer() {
   const zoneRef = useZoneVisibility();
@@ -60,100 +80,85 @@ export default function ContentLayer() {
         </p>
       </div>
 
-      {/* PARCOURS */}
+      {/* PARCOURS — bottom-left log entries, captions under the 3D name */}
       <div
         ref={zoneRef("parcours-1")}
-        className="absolute inset-0 flex flex-col justify-center px-6 opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col px-6 pb-[18vh] opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-mute">10/2024 — PRÉSENT · PARIS</p>
-        <h3 className="font-display text-4xl text-bone md:text-6xl">
-          ESCAPE <span className="text-red">(YC W23)</span>
-        </h3>
-        <p className="mt-3 max-w-md text-sm text-bone/65 md:text-base">
-          Software Engineer — détection de vulnérabilités API pour une SaaS
-          de cybersécurité, R&amp;D sécurité pilotée par IA.
+        <p className="hud-label mb-2 text-mute">10/2024 — PRÉSENT · PARIS</p>
+        <p className="max-w-md text-sm leading-relaxed text-bone/70 md:text-base">
+          <span className="text-red">Escape (YC W23)</span> — Software
+          Engineer, détection de vulnérabilités API pour une SaaS de
+          cybersécurité, R&amp;D sécurité pilotée par IA.
         </p>
       </div>
 
       <div
         ref={zoneRef("parcours-2")}
-        className="absolute inset-0 flex flex-col items-end justify-center px-6 text-right opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col px-6 pb-[18vh] opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-mute">2020 — 2024 · NANTERRE</p>
-        <h3 className="font-display text-4xl text-bone md:text-6xl">
-          IIM DIGITAL <span className="text-red">SCHOOL</span>
-        </h3>
-        <p className="mt-3 max-w-md text-sm text-bone/65 md:text-base">
-          Professeur (PHP, JS) et Student Ambassador — cours, jurys de
-          soutenance, promotion de l&apos;école.
+        <p className="hud-label mb-2 text-mute">2020 — 2024 · NANTERRE</p>
+        <p className="max-w-md text-sm leading-relaxed text-bone/70 md:text-base">
+          <span className="text-red">IIM Digital School</span> — Professeur
+          (PHP, JS) et Student Ambassador, jurys de soutenance, promotion de
+          l&apos;école.
         </p>
       </div>
 
       <div
         ref={zoneRef("parcours-3")}
-        className="absolute inset-0 flex flex-col justify-center px-6 opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col px-6 pb-[18vh] opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-mute">2021 — 2023 · COURBEVOIE</p>
-        <h3 className="font-display text-4xl text-bone md:text-6xl">
-          LA 404 <span className="text-red">DEVINCI</span>
-        </h3>
-        <p className="mt-3 max-w-md text-sm text-bone/65 md:text-base">
-          Président fondateur — association web dev du Pôle Léonard de
-          Vinci.
+        <p className="hud-label mb-2 text-mute">2021 — 2023 · COURBEVOIE</p>
+        <p className="max-w-md text-sm leading-relaxed text-bone/70 md:text-base">
+          <span className="text-red">La 404 DeVinci</span> — Président
+          fondateur, association web dev du Pôle Léonard de Vinci.
         </p>
       </div>
 
-      {/* PROJECTS */}
+      {/* PROJECTS — bottom-right badges with tech icons */}
       <div
         ref={zoneRef("project-1")}
-        className="absolute inset-0 flex flex-col items-end justify-center px-6 text-right opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col items-end px-6 pb-[18vh] text-right opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-red">MISSION 01</p>
-        <h3 className="font-display text-5xl text-bone md:text-7xl">
-          RIFTBOUND
-        </h3>
-        <p className="mt-3 max-w-sm text-sm text-bone/65 md:text-base">
+        <p className="hud-label mb-2 text-red">MISSION 01</p>
+        <p className="max-w-sm text-sm text-bone/70 md:text-base">
           Tracker de decks et de collection pour le TCG Riftbound.
         </p>
+        <TechIcons icons={[SiReact, SiTypescript, SiThreedotjs]} />
       </div>
 
       <div
         ref={zoneRef("project-2")}
-        className="absolute inset-0 flex flex-col justify-center px-6 opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col items-end px-6 pb-[18vh] text-right opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-red">MISSION 02</p>
-        <h3 className="font-display text-5xl text-bone md:text-7xl">
-          VIDÉOCLUB
-        </h3>
-        <p className="mt-3 max-w-sm text-sm text-bone/65 md:text-base">
+        <p className="hud-label mb-2 text-red">MISSION 02</p>
+        <p className="max-w-sm text-sm text-bone/70 md:text-base">
           Vidéoclub en ligne façon store 3D immersif, en WebGL.
         </p>
+        <TechIcons icons={[SiThreedotjs, SiReact, SiNextdotjs]} />
       </div>
 
       <div
         ref={zoneRef("project-3")}
-        className="absolute inset-0 flex flex-col items-end justify-center px-6 text-right opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col items-end px-6 pb-[18vh] text-right opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-red">MISSION 03</p>
-        <h3 className="font-display text-5xl text-bone md:text-7xl">
-          LETTERBOXD BOT
-        </h3>
-        <p className="mt-3 max-w-sm text-sm text-bone/65 md:text-base">
+        <p className="hud-label mb-2 text-red">MISSION 03</p>
+        <p className="max-w-sm text-sm text-bone/70 md:text-base">
           Bot Discord qui relaie l&apos;activité Letterboxd d&apos;un serveur.
         </p>
+        <TechIcons icons={[SiDiscord, SiNodedotjs, SiTypescript]} />
       </div>
 
       <div
         ref={zoneRef("project-4")}
-        className="absolute inset-0 flex flex-col justify-center px-6 opacity-0 md:px-16"
+        className="absolute inset-x-0 bottom-0 flex flex-col items-end px-6 pb-[18vh] text-right opacity-0 md:px-16"
       >
-        <p className="hud-label mb-3 text-red">MISSION 04</p>
-        <h3 className="font-display text-5xl text-bone md:text-7xl">
-          SPOTIFY STATS
-        </h3>
-        <p className="mt-3 max-w-sm text-sm text-bone/65 md:text-base">
+        <p className="hud-label mb-2 text-red">MISSION 04</p>
+        <p className="max-w-sm text-sm text-bone/70 md:text-base">
           Dashboard de stats d&apos;écoute personnalisé, au-delà du Wrapped.
         </p>
+        <TechIcons icons={[SiSpotify, SiNextdotjs, SiNodedotjs]} />
       </div>
 
       {/* SKILLS */}
