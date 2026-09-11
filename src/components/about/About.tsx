@@ -60,7 +60,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="section-shear relative -mt-[4vw] w-full overflow-hidden bg-void-raised py-28 md:py-36"
+      className="relative w-full overflow-hidden bg-void-raised py-28 md:py-36"
     >
       <div className="absolute inset-0 opacity-40">
         <div className="scanline-overlay" />

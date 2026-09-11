@@ -47,7 +47,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="section-shear relative -mt-[4vw] w-full overflow-hidden bg-void pb-16 pt-32 md:pb-20 md:pt-44"
+      className="relative w-full overflow-hidden bg-void pb-16 pt-24 md:pb-20 md:pt-32"
     >
       <div className="absolute inset-0 scanline-overlay opacity-40" />
       <div className="noise-grain" />
