@@ -70,15 +70,14 @@ export default function About() {
           <div className="clip-notch panel-frame relative aspect-[3/4] w-full overflow-hidden">
             <div className="absolute inset-0">
               <Image
-                src="/images/portrait-source.jpg"
-                alt="Portrait de Nicolas Degarrigues, traitement duotone rouge et noir"
+                src="/images/agent-portrait.png"
+                alt="Portrait de Nicolas Degarrigues, traitement graphique duotone rouge et noir façon carte d'agent"
                 fill
                 sizes="(max-width: 768px) 90vw, 420px"
-                className="object-cover [filter:grayscale(1)_contrast(1.25)_brightness(0.9)]"
+                className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-red mix-blend-color" />
-              <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-red/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent" />
               <div className="scanline-overlay" />
               <div className="noise-grain" />
             </div>
