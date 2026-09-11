@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -8,6 +9,7 @@ const HeroCanvas = dynamic(() => import("./HeroCanvas"), { ssr: false });
 
 export default function Hero() {
   const headlineRef = useRef<HTMLDivElement>(null);
+  const characterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,6 +30,24 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        characterRef.current,
+        { opacity: 0, x: 60, clipPath: "inset(0 0 100% 0)" },
+        {
+          opacity: 1,
+          x: 0,
+          clipPath: "inset(0 0 0% 0)",
+          duration: 1.1,
+          ease: "power4.out",
+          delay: 0.35,
+        }
+      );
+    }, characterRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="hero"
@@ -36,6 +56,24 @@ export default function Hero() {
       <div className="absolute inset-0">
         <HeroCanvas />
       </div>
+
+      <div
+        ref={characterRef}
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46vw] max-w-[620px] md:block"
+      >
+        <div className="relative h-full w-full">
+          <Image
+            src="/images/agent-fullbody-art.webp"
+            alt="Illustration tactique de Nicolas Degarrigues, pose agent en pied"
+            fill
+            sizes="(max-width: 1024px) 40vw, 620px"
+            className="object-cover object-top"
+            priority
+          />
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-void to-transparent" />
+        </div>
+      </div>
+
       <div className="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent" />
       <div className="absolute inset-0 scanline-overlay opacity-60" />
       <div className="noise-grain" />
@@ -53,12 +91,12 @@ export default function Hero() {
 
       <div ref={headlineRef} className="relative z-10 px-6 pb-20 md:px-10 md:pb-28">
         <p className="hero-reveal hud-label mb-3 text-red">
-          FULL-STACK DEVELOPER
+          FREELANCE SOFTWARE ENGINEER
         </p>
         <h1 className="hero-reveal font-display text-[16vw] leading-[0.82] tracking-tight text-bone md:text-[9vw]">
           NICOLAS
           <br />
-          <span className="text-stroke-red">DEGARRIGUES</span>
+          <span className="text-stroke-red">DE GARRIGUES</span>
         </h1>
         <div className="hero-reveal mt-8 flex flex-wrap items-center gap-6">
           <a

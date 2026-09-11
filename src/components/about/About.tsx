@@ -5,10 +5,10 @@ import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 
 const STATS = [
-  { label: "ROLE", value: "FULL-STACK DEV" },
-  { label: "FOCUS", value: "WEB / 3D / TOOLING" },
-  { label: "STACK", value: "TS · NEXT · NODE" },
-  { label: "STATUS", value: "AVAILABLE" },
+  { label: "ROLE", value: "FREELANCE ENGINEER" },
+  { label: "FOCUS", value: "FULLSTACK & DEVOPS" },
+  { label: "STACK", value: "SVELTE · TS · GRAPHQL" },
+  { label: "BASE", value: "PARIS, FR" },
 ];
 
 export default function About() {
@@ -70,8 +70,8 @@ export default function About() {
           <div className="clip-notch panel-frame relative aspect-[3/4] w-full overflow-hidden">
             <div className="absolute inset-0">
               <Image
-                src="/images/agent-portrait.png"
-                alt="Portrait de Nicolas Degarrigues, traitement graphique duotone rouge et noir façon carte d'agent"
+                src="/images/agent-portrait-art.webp"
+                alt="Illustration de Nicolas de Garrigues façon carte de personnage tactique, palette rouge et noir"
                 fill
                 sizes="(max-width: 768px) 90vw, 420px"
                 className="object-cover"
@@ -87,9 +87,9 @@ export default function About() {
             </div>
             <div className="absolute bottom-0 w-full border-t border-red/60 bg-void/80 px-4 py-3">
               <p className="font-display text-2xl tracking-wide text-bone">
-                DEGARRIGUES, N.
+                DE GARRIGUES, N.
               </p>
-              <p className="hud-label text-mute">DEVELOPER CLASS</p>
+              <p className="hud-label text-mute">ENGINEER CLASS</p>
             </div>
           </div>
         </div>
@@ -98,15 +98,18 @@ export default function About() {
         <div ref={textRef} className="text-left">
           <p className="about-line hud-label mb-4 text-red">— À PROPOS</p>
           <h2 className="about-line font-display text-5xl leading-[0.9] text-bone md:text-6xl">
-            OPERATEUR
+            OPÉRATEUR
             <br />
-            FULL-STACK
+            FREELANCE
           </h2>
           <p className="about-line mt-6 max-w-lg text-base leading-relaxed text-bone/75 md:text-lg">
-            Développeur passionné par les interfaces qui sortent du cadre :
-            expériences web immersives, outils sur-mesure et side-projects
-            construits pour le plaisir de la technique — d&apos;un bot Discord à
-            un tracker de jeu de cartes, en passant par des sites 3D.
+            Software Engineer freelance, après un an et demi chez Escape
+            (YC W23) à concevoir des interfaces de détection de
+            vulnérabilités API et l&apos;architecture backend qui les fait
+            tourner — entre Svelte, Node.js et GraphQL. Ancien prof à
+            l&apos;IIM Digital School et fondateur d&apos;une asso dev étudiante, je
+            garde toujours un pied dans des side-projects qui sortent du
+            cadre : bot Discord, tracker de jeu de cartes, sites 3D.
           </p>
 
           <div className="about-line mt-10 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:grid-cols-4">

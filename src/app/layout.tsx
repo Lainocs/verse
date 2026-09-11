@@ -16,9 +16,9 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "NICOLAS DEGARRIGUES // AGENT PROFILE",
+  title: "NICOLAS DE GARRIGUES // AGENT PROFILE",
   description:
-    "Portfolio de Nicolas Degarrigues, developpeur — dossier d'agent tactique.",
+    "Portfolio de Nicolas de Garrigues, software engineer — dossier d'agent tactique.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
